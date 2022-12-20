@@ -25,24 +25,32 @@ border: solid 3px red;
 
 .calculatorContainer{
 flex-direction: column;
-border: solid 4px #D5D6EA;
+border: solid 4px #BEB4D6;
 justify-content: space-around;
-background-color: #BEB4D6;
+background-color: #D5D6EA;
+border-radius: 20px;
 
 }
 .columnContainer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
-.columns
-.display{
+.columns{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     /*background-color: #816bb4;*/
     margin:10px;
 }
 button{
-    background-color: #957DAD;
-    border: solid 4px #6E7B8F;
+    background-color: #C6E2E9;
+    border: solid 2px #6E7B8F;
+    border-radius: 5px;
     margin:10px;
+}
+.thing{
+
+background-color: aqua;
+border-width: 10px;
+
 }

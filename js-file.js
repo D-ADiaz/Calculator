@@ -16,21 +16,40 @@ function divide(num1,num2){
     return answer;
 }
 
-function operate(num1,num2,operator){
+function operate(operator,num1,num2){
 
 switch(operator)
     {
         case "+":
-            add(num1,num2);
-            break;
+            return add(num1,num2);
+
         case "-":
-            subtract(num1,num2);
-            break;
+            return subtract(num1,num2);
+
         case "*":
-            multiply(num1,num2);
-            break;
+            return multiply(num1,num2);
+            
         case "/":
-            divide(num1,num2);
-            break;
+            return divide(num1,num2);
     }
 }
+
+function changeDisplay(item){
+    const displayVar = document.getElementById("display");
+
+    return displayVar.textContent = item;
+    
+}
+
+
+
+const digitBtns = document.querySelectorAll("button.digit");
+console.log(digitBtns);
+
+/* Change display to number pressed on calculator */
+digitBtns.forEach(btns => btns.addEventListener("click",()=> changeDisplay(btns.textContent)));
+
+
+
+
+
