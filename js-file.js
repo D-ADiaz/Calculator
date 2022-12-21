@@ -34,22 +34,46 @@ switch(operator)
     }
 }
 
+
+
+
+
 function changeDisplay(item){
     const displayVar = document.getElementById("display");
 
-    return displayVar.textContent = item;
+
+    return displayVar.textContent += item;
     
+}
+function clearDisplay(){
+
+    /*const displayVar= document.getElementById("display"); */
+    currentCount = 0;
+
+    return displayVar.textContent = " ";
+
+}
+
+function storeValues(){
+
+
+
+
+
 }
 
 
-
+let currentValue =0;
+const displayVar= document.getElementById("display");
 const digitBtns = document.querySelectorAll("button.digit");
+const clearBtn = document.getElementById("clear");
+const operatorBtns = document.querySelectorAll("button.operator");
 console.log(digitBtns);
 
-/* Change display to number pressed on calculator */
-digitBtns.forEach(btns => btns.addEventListener("click",()=> changeDisplay(btns.textContent)));
+/* Change display to digit pressed on calculator */
+displayVar.textContent = digitBtns.forEach(btns => btns.addEventListener("click",()=> changeDisplay(btns.textContent)));
 
+operatorBtns.forEach(oBtns => oBtns.addEventListener("click"),() => storeValues());
 
-
-
+clearBtn.addEventListener("click",()=> clearDisplay());
 

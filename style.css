@@ -48,9 +48,9 @@ button{
     border-radius: 5px;
     margin:10px;
 }
-.thing{
-
-background-color: aqua;
-border-width: 10px;
-
+.displayScreen{
+background-color: #7d7fa5;
+min-height: 20px;
+border-radius: 10px;
+padding-left: 10px;
 }
