@@ -2,6 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .header{
 
@@ -48,9 +49,17 @@ button{
     border-radius: 5px;
     margin:10px;
 }
+.display{
+
+    
+
+}
 .displayScreen{
+line-height: 30px;
 background-color: #7d7fa5;
-min-height: 20px;
+min-height: 40px;
 border-radius: 10px;
 padding-left: 10px;
+font-size: large;
+font-weight: bolder;
 }

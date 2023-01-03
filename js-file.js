@@ -56,7 +56,10 @@ function updateLastValue(){
 }
 
 function updateLastOperator(operator){
-    return lastOperator = operator;
+
+    lastOperator = operator;
+    console.log("last operator: " + lastOperator);
+    return lastOperator;
 
 }
 
@@ -75,10 +78,28 @@ function clearDisplay(){
 
 }
 
+function checkForOperation(){
+
+    if (lastOperator ===-1 ){
+
+        console.log("continue");
+    }
+    else{
+
+        changeDisplay(operate(lastOperator,currentValue,lastValue));
+
+    }
+
+
+
+}
+
 function storeValues(operator){
     
     updateLastValue();
+    checkForOperation();
     updateLastOperator(operator);
+    
 
     console.log(lastValue)
     return lastValue;
