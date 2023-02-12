@@ -25,33 +25,43 @@ function operate(operator,num1,num2){
     console.log(operator);
     console.log(num1);
     console.log(num2);
+
+    /*convert to int*/
 num1 *=1;
 num2 *=1;
+
 switch(operator)
     {
         case "+":
-            console.log("addition called");
+            console.log("addition called, adding "+ num1 + " + "+ num2 );
             return add(num1,num2);
 
         case "-":
+            console.log("subtraction called, subtracting "+ num1 + " - "+ num2 );
+
             return subtract(num1,num2);
 
         case "*":
+            console.log("multiply called, multiplying "+ num1 + " * "+ num2 );
+
             return multiply(num1,num2);
             
         case "/":
+            console.log("division called, dividing "+ num1 + " / "+ num2 );
+
             return divide(num1,num2);
     }
 }
 
 function updateCurrentValue(num){
 
+    console.log("updated current item as: " + displayVar.textContent+num);
     return currentValue = displayVar.textContent+num;
 
 }
 
 function updateLastValue(){
-
+    console.log("last value updated as " + displayVar.textContent);
     lastValue = displayVar.textContent;
 }
 
@@ -64,16 +74,15 @@ function updateLastOperator(operator){
 }
 
 function changeDisplay(item=0){
-
+    console.log("called Changedisplay");
     updateCurrentValue(item);
-    console.log( "updated current value as: " + currentValue);
-    console.log( "last value was: "+ lastValue);
+
     return displayVar.textContent += item;
     
 }
 
 function clearDisplay(){
-
+    console.log("cleardisplay called");
     return displayVar.textContent = "";
 
 }
@@ -81,27 +90,31 @@ function clearDisplay(){
 function checkForOperation(){
 
     if (lastOperator ===-1 ){
-
         console.log("continue");
     }
     else{
-
+        console.log("else statement reached");
         changeDisplay(operate(lastOperator,currentValue,lastValue));
-
     }
 
+}
+
+function resetCalculator(){
+    lastOperator = -1;
+    currentValue = 0;
+    lastValue = 0;
 
 
 }
 
 function storeValues(operator){
     
-    updateLastValue();
+    
     checkForOperation();
+    updateLastValue();
     updateLastOperator(operator);
     
-
-    console.log(lastValue)
+    clearDisplay();
     return lastValue;
 
 }
@@ -123,7 +136,7 @@ const equalBtn = document.getElementById("equals");
 displayVar.textContent = digitBtns.forEach(btns => btns.addEventListener("click",() => changeDisplay(btns.textContent)));
 
 operatorBtns.forEach(operatorBtns => operatorBtns.addEventListener("click",() => storeValues(operatorBtns.textContent)));
-operatorBtns.forEach(operatorBtns => operatorBtns.addEventListener("click",() => clearDisplay()));
+/*operatorBtns.forEach(operatorBtns => operatorBtns.addEventListener("click",() => clearDisplay()));*/
 
 equalBtn.addEventListener("click", () => changeDisplay(operate(lastOperator,lastValue,currentValue)));
-clearBtn.addEventListener("click",()=> clearDisplay());
+clearBtn.addEventListener("click",()=> resetCalculator());
