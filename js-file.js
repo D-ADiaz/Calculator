@@ -94,7 +94,7 @@ function checkForOperation(){
     }
     else{
         console.log("else statement reached");
-        changeDisplay(operate(lastOperator,currentValue,lastValue));
+        changeDisplay(operate(lastOperator,lastValue,currentValue));
     }
 
 }
